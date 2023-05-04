@@ -10,3 +10,9 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+puts "Enter a new Store name"
+@storeName = gets.chomp
+newStore = Store.create(name: "#{@storeName}", annual_revenue: 1200)
+if (!newStore.valid?)
+  puts newStore.errors.objects.first.full_message
+end
